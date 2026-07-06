@@ -619,6 +619,55 @@ ul { list-style: none; }
 .page-fade { animation: pagein 0.6s var(--ease); }
 @keyframes pagein { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
+/* ============================================================
+   PHONE REFINEMENTS
+   ============================================================ */
+@media (max-width: 600px) {
+  .container { padding-inline: 18px; }
+  .section { padding-block: clamp(56px, 15vw, 96px); }
+  .pagehead { padding-top: 128px; }
+
+  /* Full-width, thumb-friendly primary actions */
+  .hh__cta, .cta-final .hh__cta { width: 100%; }
+  .hh__cta .btn { flex: 1 1 46%; }
+
+  /* Boarding pass — narrower stub, roomier 2-col data grid */
+  .pass { grid-template-columns: 1fr 92px; }
+  .pass__main { padding: 20px 18px; }
+  .pass__stub { padding: 18px 10px; }
+  .pass__grid { grid-template-columns: repeat(2, 1fr); gap: 13px 10px; }
+  .pass__cell span { font-size: 0.82rem; }
+  .pass__code { font-size: 1.7rem; }
+
+  /* Hero visual */
+  .hh { padding-top: 118px; }
+  .hh__visual { height: 380px; }
+  .hh__pass { width: min(310px, 100%); }
+  .hh__stats { gap: 18px 26px; }
+  .hh__stat-num { font-size: 1.7rem; }
+  .hh__flap { font-size: clamp(1.15rem, 6vw, 1.7rem); }
+  .flap { min-width: 0.68em; }
+
+  /* keep stamps from clipping off-screen */
+  .hh__stamp--1 { top: 1%; right: 3%; }
+  .hh__stamp--2 { bottom: 6%; left: 2%; }
+  .hh__stamp--3 { top: 42%; right: 2%; }
+
+  /* Big display headings a touch smaller */
+  .display { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+  .quote-card blockquote { font-size: 1.15rem; }
+  .story-card--feature blockquote { font-size: 1.25rem; }
+}
+
+@media (max-width: 400px) {
+  .pass { grid-template-columns: 1fr 78px; }
+  .hh__pass { width: min(280px, 100%); }
+  .hh__stamp-ink { width: 70px; height: 70px; }
+  .hh__stamp-ink b { font-size: 0.62rem; }
+  .hh__cta .btn { flex: 1 1 100%; }
+  .btn { font-size: 0.76rem; padding: 14px 20px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   .reveal-el, .stamp-in { opacity: 1 !important; transform: none !important; }
