@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import Ticket from "@/components/Ticket";
+import DestinationFinder from "@/components/DestinationFinder";
 import { destinations } from "@/lib/destinations";
 
 export const metadata: Metadata = {
   title: "Destinations",
   description:
-    "Study in the world's top destinations — UK, USA, Canada, Australia, Germany and Ireland. Explore visas, courses, work rights and costs for each.",
+    "Study in 16 of the world's top destinations — the UK, USA, Canada, Australia, Ireland, Germany, France and more. Explore visas, courses, work rights and costs for each.",
 };
 
 export default function DestinationsPage() {
@@ -21,7 +21,7 @@ export default function DestinationsPage() {
           <span className="eyebrow eyebrow--light">Departure Board</span>
           <h1 className="display" style={{ marginTop: 18 }}>Choose your<br />destination.</h1>
           <p className="lead">
-            Six of the world&apos;s leading education hubs — each a different door to
+            Sixteen of the world&apos;s leading education hubs — each a different door to
             your future. Pick a ticket to see visas, courses, work rights and costs.
           </p>
 
@@ -44,13 +44,12 @@ export default function DestinationsPage() {
 
       <section className="section paper grain">
         <div className="container">
-          <div className="grid-3">
-            {destinations.map((d, i) => (
-              <Reveal key={d.slug} delay={(i % 3) * 80}>
-                <Ticket d={d} notch="var(--paper)" />
-              </Reveal>
-            ))}
+          <div className="section__head" style={{ marginBottom: 34 }}>
+            <span className="eyebrow eyebrow--center">Find your fit</span>
+            <h2 className="h2">Search destinations &amp; courses</h2>
+            <p className="lead">Filter by region or course area, or search for a country, city or subject.</p>
           </div>
+          <DestinationFinder destinations={destinations} />
         </div>
       </section>
 

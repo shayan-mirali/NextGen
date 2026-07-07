@@ -5,20 +5,15 @@ import Counter from "@/components/Counter";
 import RouteLine from "@/components/RouteLine";
 import Ticket from "@/components/Ticket";
 import BoardingPass from "@/components/BoardingPass";
+import Reviews from "@/components/Reviews";
 import { destinations } from "@/lib/destinations";
+import { services } from "@/lib/services";
 
 const legs = [
   { code: "LEG 01", title: "Discovery Call", text: "A free consultation to understand your goals, academics and budget — then map the realistic routes forward.", stamp: "CLEARED" },
   { code: "LEG 02", title: "Flight Plan", text: "A tailored shortlist of universities and programmes, with timelines, costs and scholarship targets.", stamp: "PLOTTED" },
   { code: "LEG 03", title: "Apply & Prepare", text: "We polish essays, references and tests, submit flawless applications, and prep you for every interview.", stamp: "SUBMITTED" },
   { code: "LEG 04", title: "Visa & Departure", text: "Documents perfected, visa secured, bags packed. We handle logistics so you land ready to thrive.", stamp: "APPROVED" },
-];
-
-const services = [
-  { icon: "🎯", title: "University Selection", text: "Data-driven shortlisting matched to your goals — the best-fit universities, not just the famous ones." },
-  { icon: "📝", title: "Applications & SOP", text: "Statements and essays that make admissions officers remember your story." },
-  { icon: "🛂", title: "Visa Assistance", text: "Meticulous documentation and mock interviews behind our 98% visa success rate." },
-  { icon: "💰", title: "Scholarships", text: "We surface the funding you qualify for and position you to win it." },
 ];
 
 export default function Home() {
@@ -73,12 +68,18 @@ export default function Home() {
           </div>
           <div className="grid-4">
             {services.map((s, i) => (
-              <Reveal key={s.title} delay={(i % 4) * 80}>
-                <div className="card">
+              <Reveal key={s.slug} delay={(i % 4) * 80}>
+                <Link href={`/services/${s.slug}`} className="card svc-mini">
                   <div className="card__ico">{s.icon}</div>
                   <h3>{s.title}</h3>
-                  <p>{s.text}</p>
-                </div>
+                  <p>{s.blurb}</p>
+                  <span className="svc-mini__go">
+                    Learn more
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -125,8 +126,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Google reviews */}
+      <Reviews />
+
       {/* CTA */}
-      <section className="section paper-2 grain">
+      <section className="section paper grain">
         <div className="container cta-final">
           <Reveal className="cta-final__text">
             <span className="eyebrow">Final Call</span>
@@ -142,7 +146,7 @@ export default function Home() {
           </Reveal>
           <Reveal className="cta-final__pass" delay={120}>
             <BoardingPass
-              notch="var(--paper-2)"
+              notch="var(--paper)"
               to={{ code: "GO", place: "Anywhere" }}
               boards="TODAY"
             />

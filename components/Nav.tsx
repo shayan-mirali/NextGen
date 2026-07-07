@@ -9,7 +9,9 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/destinations", label: "Destinations" },
-  { href: "/success-stories", label: "Stories" },
+  { href: "/resources", label: "Resources" },
+  { href: "/blog", label: "Blog" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 function Clock() {

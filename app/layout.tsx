@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
+import { Poppins, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Cursor from "@/components/Cursor";
 import ScrollProgress from "@/components/ScrollProgress";
+import WhatsApp from "@/components/WhatsApp";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-jakarta",
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -29,11 +23,11 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "NextGen Study Abroad — Your Global Education Journey",
+    default: "NextGen Study Abroad — Your Gateway to Global Education",
     template: "%s · NextGen Study Abroad",
   },
   description:
-    "NextGen Study Abroad turns global ambitions into acceptance letters. Expert university selection, applications, visas and scholarships — with a 98% visa success rate.",
+    "Your gateway to global education. NextGen Study Abroad offers expert study-abroad consultancy, student visa assistance, admission guidance and IELTS/PTE preparation — with a 98% visa success rate across 16 destinations.",
   keywords: [
     "study abroad",
     "education consultant",
@@ -44,9 +38,9 @@ export const metadata: Metadata = {
   ],
   icons: { icon: "/logo.png" },
   openGraph: {
-    title: "NextGen Study Abroad — Your Global Education Journey",
+    title: "NextGen Study Abroad — Your Gateway to Global Education",
     description:
-      "Premium study-abroad consultation. From university selection to visas and scholarships, we walk every step beside you.",
+      "Your gateway to global education. From consultancy and admissions to student visas and IELTS/PTE prep, we walk every step beside you.",
     type: "website",
   },
 };
@@ -57,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${jakarta.variable} ${spaceMono.variable}`}
+      className={`${poppins.variable} ${spaceMono.variable}`}
     >
       <body>
         <Cursor />
@@ -65,6 +59,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <WhatsApp />
       </body>
     </html>
   );

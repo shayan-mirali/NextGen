@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { destinations } from "@/lib/destinations";
+import { services } from "@/lib/services";
+import Newsletter from "@/components/Newsletter";
 
 const socials = [
   { label: "Instagram", short: "IG", href: "https://www.instagram.com/nextgenstudyconsultant/" },
@@ -21,6 +23,8 @@ export default function Footer() {
           <span style={{ color: "rgba(255,255,255,0.5)" }}>·</span>
           <span style={{ color: "#29c26b" }}>ON TIME</span>
         </div>
+
+        <Newsletter />
 
         <div className="footer__inner">
           <div className="footer__brand">
@@ -51,27 +55,32 @@ export default function Footer() {
           </div>
 
           <div className="footer__col">
-            <h4>Explore</h4>
-            <Link href="/about">About</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/destinations">Destinations</Link>
-            <Link href="/success-stories">Success Stories</Link>
-          </div>
-
-          <div className="footer__col">
-            <h4>Destinations</h4>
-            {destinations.slice(0, 4).map((d) => (
-              <Link key={d.slug} href={`/destinations/${d.slug}`}>
-                {d.name}
+            <h4>Services</h4>
+            {services.map((s) => (
+              <Link key={s.slug} href={`/services/${s.slug}`}>
+                {s.short}
               </Link>
             ))}
           </div>
 
           <div className="footer__col">
-            <h4>Check In</h4>
-            <Link href="/contact">Free Consultation</Link>
-            <Link href="/contact">Book a Call</Link>
-            <a href="mailto:hello@nextgenstudyabroad.com">Email us</a>
+            <h4>Destinations</h4>
+            {destinations.slice(0, 5).map((d) => (
+              <Link key={d.slug} href={`/destinations/${d.slug}`}>
+                {d.name}
+              </Link>
+            ))}
+            <Link href="/destinations">All 16 →</Link>
+          </div>
+
+          <div className="footer__col">
+            <h4>Company</h4>
+            <Link href="/about">About</Link>
+            <Link href="/success-stories">Success Stories</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/resources">Brochures &amp; Resources</Link>
+            <Link href="/faq">FAQ</Link>
+            <Link href="/contact#appointment">Book Appointment</Link>
           </div>
         </div>
 

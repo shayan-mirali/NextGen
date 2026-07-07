@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import CheckInForm from "@/components/CheckInForm";
+import AppointmentForm from "@/components/AppointmentForm";
 
 export const metadata: Metadata = {
   title: "Check In · Free Consultation",
@@ -48,16 +49,20 @@ export default function ContactPage() {
               ))}
             </div>
 
+            {/* ⚠️ Placeholder contact details — replace with your real phone, WhatsApp,
+                address and hours once confirmed. */}
             <ul className="checkin-contacts">
-              <li><span>✉</span> hello@nextgenstudyabroad.com</li>
-              <li><span>☎</span> +1 (800) 555-0199</li>
+              <li><span>☎</span> <a href="tel:+18005550199">+1 (800) 555-0199</a></li>
+              <li><span>💬</span> <a href="https://wa.me/10000000000" target="_blank" rel="noreferrer">WhatsApp us</a></li>
+              <li><span>✉</span> <a href="mailto:hello@nextgenstudyabroad.com">hello@nextgenstudyabroad.com</a></li>
+              <li><span>📍</span> Your Office Address, near [Landmark]</li>
+              <li><span>🕒</span> Mon–Sat · 9:00 AM – 6:00 PM</li>
               <li>
                 <span>◎</span>
                 <a href="https://www.instagram.com/nextgenstudyconsultant/" target="_blank" rel="noreferrer">
                   @nextgenstudyconsultant
                 </a>
               </li>
-              <li><span>📍</span> Global · Online &amp; in-person</li>
             </ul>
 
             <div className="checkin-trust">
@@ -75,6 +80,29 @@ export default function ContactPage() {
                 <span className="checkin-card__flight">NG · 2026</span>
               </div>
               <CheckInForm />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Book an appointment */}
+      <section className="section paper-2 grain" id="appointment">
+        <div className="container" style={{ maxWidth: 720, position: "relative", zIndex: 1 }}>
+          <div className="section__head">
+            <span className="eyebrow eyebrow--center">Prefer a set time?</span>
+            <h2 className="h2">Book an appointment</h2>
+            <p className="lead">
+              Pick a day and slot that suits you — we&apos;ll confirm by email and meet
+              online or at our office.
+            </p>
+          </div>
+          <Reveal>
+            <div className="checkin-card">
+              <div className="checkin-card__head">
+                <span>Appointment Booking</span>
+                <span className="checkin-card__flight">Mon–Sat</span>
+              </div>
+              <AppointmentForm />
             </div>
           </Reveal>
         </div>

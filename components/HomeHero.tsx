@@ -41,8 +41,8 @@ export default function HomeHero() {
           </motion.div>
 
           <motion.h1 className="hh__title" variants={fade} custom={2}>
-            Your boarding pass to a
-            <span className="grad"> world-class education.</span>
+            Your Gateway to
+            <span className="grad"> Global Education.</span>
           </motion.h1>
 
           <motion.p className="hh__lead" variants={fade} custom={3}>
@@ -73,7 +73,7 @@ export default function HomeHero() {
               <span className="hh__stat-label">Students flown</span>
             </div>
             <div>
-              <Counter to={30} suffix="+" className="hh__stat-num" />
+              <Counter to={16} suffix="" className="hh__stat-num" />
               <span className="hh__stat-label">Destinations</span>
             </div>
           </motion.div>
