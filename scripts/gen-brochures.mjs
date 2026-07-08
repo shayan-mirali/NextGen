@@ -121,7 +121,7 @@ function buildPDF(blocks) {
 const FOOT = [
   { t: "space", h: 14 },
   { t: "rule" },
-  { t: "body", text: "NextGen Study Abroad  ·  Your Gateway to Global Education  ·  hello@nextgenstudyabroad.com" },
+  { t: "body", text: "NextGen Study Abroad  ·  Your Gateway to Global Education  ·  info@nextgenstudyabroad.com" },
 ];
 
 const docs = {
