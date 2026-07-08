@@ -36,8 +36,17 @@ export default async function DestinationDetail({
 
   const others = destinations.filter((x) => x.slug !== d.slug).slice(0, 3);
 
-  const numeric = (v: string) => parseInt(v.replace(/[^0-9]/g, ""), 10) || 0;
-  const suffix = (v: string) => v.replace(/[0-9]/g, "");
+  const leadingNumber = (v: string) => {
+    const m = v.match(/^\d[\d,]*/);
+    return m ? parseInt(m[0].replace(/,/g, ""), 10) : 0;
+  };
+  const suffix = (v: string) => v.replace(/^\d[\d,]*/, "");
+  // Only animate values that are a single number followed by a suffix.
+  // Ranges like "2–4 yrs" keep their extra digits and render as-is.
+  const countable = (v: string) => {
+    const m = v.match(/^\d[\d,]*/);
+    return !!m && !/\d/.test(v.slice(m[0].length));
+  };
 
   return (
     <main>
@@ -71,8 +80,8 @@ export default async function DestinationDetail({
           <div className="statrow">
             {d.stats.map((s) => (
               <Reveal key={s.label}>
-                {numeric(s.value) > 0 ? (
-                  <Counter to={numeric(s.value)} suffix={suffix(s.value)} className="stat__num grad-blue" />
+                {countable(s.value) ? (
+                  <Counter to={leadingNumber(s.value)} suffix={suffix(s.value)} className="stat__num grad-blue" />
                 ) : (
                   <span className="stat__num grad-blue">{s.value}</span>
                 )}
