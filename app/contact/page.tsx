@@ -53,7 +53,8 @@ export default function ContactPage() {
               <li><span>☎</span> <a href="tel:+923394020357">0339-4020357</a></li>
               <li><span>💬</span> <a href="https://wa.me/923394020357" target="_blank" rel="noreferrer">WhatsApp us</a></li>
               <li><span>✉</span> <a href="mailto:info@nextgenstudyabroad.com">info@nextgenstudyabroad.com</a></li>
-              <li><span>🕒</span> Mon–Sat · 9:00 AM – 6:00 PM</li>
+              <li><span>📍</span> 17C, 1st Floor, 9th Zamzama Commercial, DHA Phase 5, Karachi</li>
+              <li><span>🕒</span> Mon–Sat · 11:00 AM – 7:00 PM (PKT)</li>
               <li>
                 <span>◎</span>
                 <a href="https://www.instagram.com/nextgenstudyconsultant/" target="_blank" rel="noreferrer">

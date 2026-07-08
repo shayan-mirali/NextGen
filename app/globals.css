@@ -364,7 +364,7 @@ ul { list-style: none; }
 .ticket:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
 .ticket__top { position: relative; height: 150px; overflow: hidden; background: var(--grad-brand); display: grid; place-items: center; }
 .ticket__top::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 100% at 50% 130%, rgba(231,201,122,0.4), transparent 60%); }
-.ticket__flag { font-size: 3.6rem; position: relative; z-index: 1; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3)); transition: transform 0.6s var(--ease); }
+.ticket__flag { height: 64px; width: auto; display: block; border-radius: 6px; position: relative; z-index: 1; box-shadow: 0 8px 18px rgba(0,0,0,0.35); transition: transform 0.6s var(--ease); }
 .ticket:hover .ticket__flag { transform: scale(1.16) translateY(-4px); }
 .ticket__code { position: absolute; top: 14px; right: 16px; z-index: 2; font-family: var(--font-mono); font-weight: 700; font-size: 0.86rem; letter-spacing: 0.14em; color: var(--gold-light); }
 .ticket__tear { position: relative; height: 0; }
