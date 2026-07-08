@@ -17,13 +17,6 @@ const values = [
   { top: "Value 04", big: "END-TO-END", bottom: "Gate to campus", variant: "blue" as const, rot: 8 },
 ];
 
-const crew = [
-  { initials: "SA", name: "Sara Ahmed", role: "Founder & Lead Counsellor", bio: "Ex-university admissions officer. Has personally guided 2,000+ students to top-50 universities." },
-  { initials: "DK", name: "David Kim", role: "Head of Visas", bio: "Former immigration caseworker. Turns the scariest part of the process into a formality." },
-  { initials: "MP", name: "Maria Popescu", role: "Scholarships Lead", bio: "Has helped students unlock over $45M in funding across 30 countries." },
-  { initials: "JR", name: "James Reid", role: "Test Prep Mentor", bio: "IELTS 9.0 & GRE 335. Makes exam prep feel almost unfair to the competition." },
-];
-
 export default function AboutPage() {
   return (
     <main>
@@ -79,29 +72,6 @@ export default function AboutPage() {
           <div className="stamp-row">
             {values.map((v) => (
               <Stamp key={v.big} top={v.top} big={v.big} bottom={v.bottom} variant={v.variant} rotate={v.rot} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Crew */}
-      <section className="section paper grain">
-        <div className="container">
-          <div className="section__head">
-            <span className="eyebrow eyebrow--center">Flight Crew</span>
-            <h2 className="h2">The people in your corner</h2>
-            <p className="lead">Real specialists — not a call-centre. You&apos;ll know them by name.</p>
-          </div>
-          <div className="grid-4">
-            {crew.map((c, i) => (
-              <Reveal key={c.name} delay={(i % 4) * 80}>
-                <div className="card crew-card">
-                  <div className="crew-card__avatar">{c.initials}</div>
-                  <h3>{c.name}</h3>
-                  <span className="crew-card__role">{c.role}</span>
-                  <p>{c.bio}</p>
-                </div>
-              </Reveal>
             ))}
           </div>
         </div>

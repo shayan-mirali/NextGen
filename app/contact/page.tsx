@@ -49,18 +49,23 @@ export default function ContactPage() {
               ))}
             </div>
 
-            {/* ⚠️ Placeholder contact details — replace with your real phone, WhatsApp,
-                address and hours once confirmed. */}
+            {/* ⚠️ Address and hours are still placeholders — replace once confirmed. */}
             <ul className="checkin-contacts">
-              <li><span>☎</span> <a href="tel:+18005550199">+1 (800) 555-0199</a></li>
-              <li><span>💬</span> <a href="https://wa.me/10000000000" target="_blank" rel="noreferrer">WhatsApp us</a></li>
-              <li><span>✉</span> <a href="mailto:hello@nextgenstudyabroad.com">hello@nextgenstudyabroad.com</a></li>
+              <li><span>☎</span> <a href="tel:+923394020357">0339-4020357</a></li>
+              <li><span>💬</span> <a href="https://wa.me/923394020357" target="_blank" rel="noreferrer">WhatsApp us</a></li>
+              <li><span>✉</span> <a href="mailto:info@nextgenstudyabroad.com">info@nextgenstudyabroad.com</a></li>
               <li><span>📍</span> Your Office Address, near [Landmark]</li>
               <li><span>🕒</span> Mon–Sat · 9:00 AM – 6:00 PM</li>
               <li>
                 <span>◎</span>
                 <a href="https://www.instagram.com/nextgenstudyconsultant/" target="_blank" rel="noreferrer">
                   @nextgenstudyconsultant
+                </a>
+              </li>
+              <li>
+                <span>ⓕ</span>
+                <a href="https://www.facebook.com/nextgenstudyconsultant/" target="_blank" rel="noreferrer">
+                  nextgenstudyconsultant
                 </a>
               </li>
             </ul>

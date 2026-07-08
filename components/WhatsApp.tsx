@@ -1,7 +1,6 @@
 // Floating WhatsApp chat button.
-// ⚠️ Replace WHATSAPP_NUMBER with your real number in full international format,
-//    digits only — no "+", spaces or dashes. e.g. "447700900123".
-const WHATSAPP_NUMBER = "10000000000";
+// Number in full international format, digits only — no "+", spaces or dashes.
+const WHATSAPP_NUMBER = "923394020357";
 const PREFILL = "Hi NextGen! I'd like a free study-abroad consultation.";
 
 export default function WhatsApp() {

@@ -6,9 +6,7 @@ import Newsletter from "@/components/Newsletter";
 
 const socials = [
   { label: "Instagram", short: "IG", href: "https://www.instagram.com/nextgenstudyconsultant/" },
-  { label: "LinkedIn", short: "IN", href: "#" },
-  { label: "Facebook", short: "FB", href: "#" },
-  { label: "YouTube", short: "YT", href: "#" },
+  { label: "Facebook", short: "FB", href: "https://www.facebook.com/nextgenstudyconsultant/" },
 ];
 
 export default function Footer() {
