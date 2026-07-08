@@ -18,8 +18,10 @@ function Clock() {
   const [time, setTime] = useState("--:--");
   useEffect(() => {
     const tick = () =>
+      // `undefined` locale → follows the visitor's device: local time zone and
+      // their region's own format (24h in UK/UAE, 12h AM/PM in the US, etc.).
       setTime(
-        new Date().toLocaleTimeString("en-GB", {
+        new Date().toLocaleTimeString(undefined, {
           hour: "2-digit",
           minute: "2-digit",
         })

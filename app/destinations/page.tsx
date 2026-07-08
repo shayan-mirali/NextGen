@@ -34,7 +34,7 @@ export default function DestinationsPage() {
               <Link key={d.slug} href={`/destinations/${d.slug}`} className="depboard__row">
                 <span className="depboard__dest">{d.flag} {d.name}</span>
                 <span className="depboard__code">{d.code}</span>
-                <span className="depboard__intake">{d.intakes.split(" ")[0]}</span>
+                <span className="depboard__intake">{d.intakes.split(" ")[0].replace(/[.,]$/, "")}</span>
                 <span className="depboard__status">● BOARDING</span>
               </Link>
             ))}
